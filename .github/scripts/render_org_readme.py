@@ -593,17 +593,18 @@ def publish(content: str, *, force: bool = False) -> dict:
 
 
 def cleanup_desktop_ini() -> None:
-    """The .github repo accidentally has a desktop.ini at root. Best-effort delete."""
-    path = f"repos/Single-Molecule-Sequencing/{PROFILE_REPO}/contents/desktop.ini"
-    try:
-        existing = gh_api(path)
-        gh_api(path, method="DELETE", payload={
-            "message": "chore: remove stray desktop.ini",
-            "sha": existing["sha"],
-            "branch": "master",
-        })
-    except RuntimeError:
-        pass
+    """The .github repo accidentally has desktop.ini files committed. Best-effort delete."""
+    for repo_path in ("desktop.ini", "profile/desktop.ini"):
+        path = f"repos/Single-Molecule-Sequencing/{PROFILE_REPO}/contents/{repo_path}"
+        try:
+            existing = gh_api(path)
+            gh_api(path, method="DELETE", payload={
+                "message": f"chore: remove stray {repo_path}",
+                "sha": existing["sha"],
+                "branch": "master",
+            })
+        except RuntimeError:
+            pass
 
 
 def upload_file(repo_path: str, content: str, commit_message: str) -> dict:
@@ -684,7 +685,7 @@ def main() -> int:
     args = p.parse_args()
 
     t0 = time.time()
-    print(f"[org-readme] fetching org repo list...", file=sys.stderr)
+    print("[org-readme] fetching org repo list...", file=sys.stderr)
     repos = fetch_repos()
     print(f"[org-readme] {len(repos)} repos found", file=sys.stderr)
 
