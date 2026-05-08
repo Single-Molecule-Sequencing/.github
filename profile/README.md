@@ -227,11 +227,11 @@ Auto-spawned smoke-test repos, vendored third-party tools, demo content.
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`.github`](https://github.com/Single-Molecule-Sequencing/.github) | Org profile repository (this README). | 🌍 public |
 | 🟢 [`.github-private`](https://github.com/Single-Molecule-Sequencing/.github-private) | Private org profile assets. | 🔒 private |
 | 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
 | 🟡 [`_smoke-lab-paper-template-24978290870`](https://github.com/Single-Molecule-Sequencing/_smoke-lab-paper-template-24978290870) | Auto-spawned smoke-test repo (will be deleted by template-smoke workflow). | 🔒 private · `TeX` |
 | 🟡 [`_lab-render-canary`](https://github.com/Single-Molecule-Sequencing/_lab-render-canary) | CI canary repo for lab-papers reusable workflows. | 🔒 private · `TeX` |
-| 🟠 [`.github`](https://github.com/Single-Molecule-Sequencing/.github) | Org profile repository (this README). | 🌍 public |
 | ⚪ [`spec-kit`](https://github.com/Single-Molecule-Sequencing/spec-kit) | 💫 Vendored Spec-Driven-Development toolkit (third-party). | 🌍 public · `Python` |
 
 </details>
