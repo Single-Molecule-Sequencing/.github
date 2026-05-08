@@ -1,0 +1,56 @@
+name: update-org-readme
+
+# Auto-regenerate the Single-Molecule-Sequencing org profile README.
+#
+# Workflow lives in `Single-Molecule-Sequencing/.github/.github/workflows/`.
+# The render script is vendored at `.github/scripts/render_org_readme.py`
+# (canonical copy lives in ont-ecosystem/skills/org-readme/scripts/).
+
+on:
+  schedule:
+    # Daily at 12:00 UTC (08:00 ET / 05:00 PT) — after morning lab activity has settled.
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force-publish even when content matches"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-org-readme-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout .github repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify gh CLI is available
+        run: gh --version
+
+      - name: Render and publish org README
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE_FLAG: ${{ inputs.force == true && '--force' || '' }}
+        run: |
+          python .github/scripts/render_org_readme.py $FORCE_FLAG
+
+      - name: Upload run log as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: org-readme-run-log
+          path: ~/.cache/org-readme/last-run.json
+          if-no-files-found: ignore
+          retention-days: 14
