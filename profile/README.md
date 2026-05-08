@@ -89,8 +89,8 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 |---|---|---|
 | 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
 | 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
-| 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
+| 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`SMS_infrastructure`](https://github.com/Single-Molecule-Sequencing/SMS_infrastructure) | Core infrastructure: schemas, validation, templates, and automation for SMS Lab | 🔒 private · `HTML` |
 | 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
 | 🟢 [`lab-experiments`](https://github.com/Single-Molecule-Sequencing/lab-experiments) | Unified event-sourced experiment registry (ONT + PacBio + Illumina). v1 spec in docs/superpowers/specs/. | 🔒 private · `Python` |
@@ -130,9 +130,9 @@ Project-coordination shells (`.project/` + `CLAUDE.md` pattern). Each wraps wet-
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`cas9-targeted-sequencing`](https://github.com/Single-Molecule-Sequencing/cas9-targeted-sequencing) | PacBio Cas9-enriched CYP2D6 targeted sequencing project; seeded from Yisang Kim thesis | 🔒 private · `Python` |
 | 🟢 [`longevity-platform-grant`](https://github.com/Single-Molecule-Sequencing/longevity-platform-grant) | Multi-PI longevity grant project: 4-axis long-read sequencing platform (methylation aging clock, somatic mosaicism, PGx of aging, mtDNA heteroplasmy). 14+ PDF variants for R01/R21/NIA/U19/Astera/Impetus/Hevolution/NSF/AFAR/Hillblom/CPRIT | 🌍 public · `Python` |
 | 🟢 [`golden-gate`](https://github.com/Single-Molecule-Sequencing/golden-gate) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
-| 🟢 [`cas9-targeted-sequencing`](https://github.com/Single-Molecule-Sequencing/cas9-targeted-sequencing) | PacBio Cas9-enriched CYP2D6 targeted sequencing project; seeded from Yisang Kim thesis | 🔒 private · `Python` |
 | 🟢 [`single-read-single-cell-diplotyping`](https://github.com/Single-Molecule-Sequencing/single-read-single-cell-diplotyping) | Single Read Single Cell Diplotyping project workspace | 🔒 private · `Python` |
 | 🟢 [`telomere-sequencing`](https://github.com/Single-Molecule-Sequencing/telomere-sequencing) | Long-Read Telomere Sequencing for TMM Profiling in Liposarcoma — RCC/CSI Grant #14884 | 🔒 private · `Python` |
 | 🟢 [`adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/adaptive-sampling) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
