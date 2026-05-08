@@ -439,6 +439,107 @@ Our codebase is organized as a **four-tier infrastructure stack** (data → regi
 """
 
 
+def fmt_member_only_sections() -> str:
+    """Operational sections that only render in the .github-private (member) view."""
+    return """## 🔐 Members-only operational reference
+
+> The sections below render only in the member view (`.github-private/profile/README.md`).
+> They expose lab-internal paths, account names, and conventions that have no place on the public landing page.
+
+### 🚀 Common one-liners
+
+The 8 highest-frequency operations across the lab. Full reference in the per-repo `CLAUDE.md`.
+
+| Goal | Command |
+|---|---|
+| Build any registered paper | `lab-manuscript build --paper <id>` |
+| Add a citation | `python -m refs.bin.lab_refs add <doi> --topics <topics>` |
+| Register a new ONT experiment | `python -m bin.experiment_register --run-id <id>` |
+| Pre-submission check | `lab-submission-check --paper <id> --journal <slug>` |
+| Pin shell to a paper or project | `lab-workspace activate <id>` |
+| Find a meeting decision | `/lab-query "<topic>"` (web UI on localhost:7861) |
+| Cross-paper status dashboard | `/lab-paper-status` |
+| Refresh THIS README | `/org-readme` |
+
+### 💾 Data locations (canonical paths)
+
+| What | Path | Notes |
+|---|---|---|
+| Raw POD5/BAM/FASTQ archive | `/mnt/d/SMS_POP_data/` | Canonical local archive, rsync-mirrored from instruments |
+| PGx merged uBAMs | `/mnt/d/merged_bams/` | Per-patient uBAMs, barcode09–14; align with `minimap2 -y` |
+| Reference genomes | `/mnt/d/Reference_Files/` | GRCh38 primary-only + CYP2D6 haplotypes |
+| Fast-subsample output | `/mnt/d/.sma-seq/` | Default destination of `/fast-subsample` |
+| Google Drive | `/mnt/d/Google_Drive_umich/` | Shared lab Drive, native rclone mount |
+| Dropbox | `/mnt/d/University of Michigan Dropbox/Gregory Farnum/` | Lab Dropbox; not `/mnt/c/Users/gregfar/` |
+| Great Lakes secure storage | `/nfs/turbo/umms-bleu-secure/` | HPC-only; mount via `/greatlakes-sync` |
+| ONT registry (local) | `~/.ont-registry/` | Synced to `Single-Molecule-Sequencing/ont-registry` |
+| SMA registry (local) | `~/.sma-registry/sma_registry.db` | SQLite, 17 tables, ~215 experiments |
+| Lab Wiki | `~/repos/lab-wiki/` | LLM-maintained knowledge base |
+| Lab Papers infra | `~/repos/lab-papers/` | Atom system, shared CI, refs library |
+
+### 🖥️ HPC quick reference (Great Lakes)
+
+```bash
+# SLURM submission template
+#SBATCH --account=bleu0
+#SBATCH --partition=standard
+
+# SPANK gpu_cmode workaround for non-GPU jobs (else they crash on submission):
+mkdir -p ~/bin
+printf '#!/bin/bash\\nexit 0\\n' > ~/bin/nvidia-smi
+chmod +x ~/bin/nvidia-smi
+export PATH="$HOME/bin:$PATH"
+
+# Dorado basecaller
+~/dorado/dorado-1.3.1-linux-x64/bin/dorado basecaller sup pod5/ > calls.bam
+```
+
+### 📐 Lab-wide conventions (must-follow)
+
+| Rule | Why |
+|---|---|
+| **Never use ALT contigs** in alignment refs | ALT contigs steal reads and silently corrupt downstream analysis. Always GRCh38 primary-only. |
+| **Use `minimap2 -y`** when realigning | Preserves MM/ML methylation tags through realignment. |
+| **Q-score averaging is logarithmic** | Use `mean_qscore()` from `lib.qscore`, never arithmetic mean. |
+| **Sort BAMs to `/tmp/` first** on WSL | `/mnt/d/` is exFAT — sorting in place is 10× slower and triggers permission-bit drift. |
+| **`pathlib`, not `os.path`** | Lab-wide Python convention. |
+| **`ruff`, not `flake8`** | Lab-wide linter. |
+| **Search before authoring infrastructure** | Run `/search-existing` before any new bootstrap/install/setup script. |
+| **No multiline regex on YAML registries** | Use the `Edit` tool with surgical strings, or round-trip through a parser. |
+
+### 📅 Submission timeline (ship list)
+
+Auto-pulled from `lab-papers/papers.yaml` when invoked from a checkout that has it; otherwise this static fallback.
+
+| Paper | Target journal | Target date | Status |
+|---|---|---|---|
+| `end-reason-paper` | *Scientific Data* | 2026-06-01 | Drafting |
+| `paper-pgx-adaptive-sampling-v2` | *Clin Pharm Ther* | 2026-07-01 | Drafting |
+| `SMAseq_paper` | *Nature Genetics* | 2026-09-01 | Drafting |
+| Wolfe PhD thesis | UM Rackham | 2026-04-10 | ✅ Submitted |
+
+### ⏰ Lab automation cadence
+
+| What | When | Owner skill |
+|---|---|---|
+| ONT registry sync | SessionStart hook | `ont_bootstrap.py` |
+| Skill-doctor health check | every 30 min cron | `/skill-doctor` |
+| Lab-wiki ingest | weekly + on-demand | `/lab-transcripts` |
+| Org README (this file) | daily 12:00 UTC | `/org-readme` |
+| Skill-recommender audit | daily | `/skill-recommender` |
+| Duplication audit | quarterly | `/duplication-audit` |
+
+### 🛠️ Operational escalation
+
+- **Plugin / skill / hook broken?** → run `/plugin-doctor`
+- **Symlink in `~/.claude/skills/` orphaned?** → run `/consolidate`
+- **Manuscript not building in CI?** → check `/.github/workflows/build.yml` and `variants.yml`; if it says `concurrency: cancel-in-progress: true` is missing, that's the bug
+- **Pages site 404?** → check `docs/landing.html` exists and `gh-pages` branch is set as the Pages source
+- **GH Actions parse-fail with empty job list?** → public repo trying to call private reusable workflow; inline the workflow per the lab-paper-template fix from 2026-05-08
+
+"""
+
+
 def fmt_legend() -> str:
     return """<details>
 <summary>🧭 Marker legend</summary>
@@ -459,7 +560,10 @@ def fmt_legend() -> str:
 """
 
 
-def render(repos: list[Repo], verified: dict[str, int], render_ts: datetime) -> str:
+def render(repos: list[Repo], verified: dict[str, int], render_ts: datetime, *, view: str = "public") -> str:
+    """Render the README. view='public' for .github, view='private' for .github-private."""
+    if view not in ("public", "private"):
+        raise ValueError(f"unknown view: {view!r}")
     by_cat: dict[str, list[Repo]] = {}
     for r in repos:
         by_cat.setdefault(r.category, []).append(r)
@@ -478,6 +582,8 @@ def render(repos: list[Repo], verified: dict[str, int], render_ts: datetime) -> 
     parts.append(fmt_header(stats))
     parts.append(fmt_dashboards(verified))
     parts.append(fmt_infra_diagram())
+    if view == "private":
+        parts.append(fmt_member_only_sections())
     parts.append("\n## 📦 Repositories\n")
     parts.append("Every active and archived repo in the org, grouped by purpose. Stamps reflect last `git push` time.\n")
     parts.append(fmt_legend())
@@ -606,14 +712,14 @@ def detect_default_branch(repo: str) -> str:
         return "master"
 
 
-def publish(content: str, *, force: bool = False, also_private: bool = True) -> list[dict]:
-    """Publish to .github (always) and .github-private (if requested)."""
+def publish(public_content: str, private_content: str, *, force: bool = False, also_private: bool = True) -> list[dict]:
+    """Publish per-view content: public → .github, private → .github-private."""
     results: list[dict] = []
     branch_pub = detect_default_branch(PROFILE_REPO)
-    results.append(publish_to(PROFILE_REPO, content, force=force, branch=branch_pub))
+    results.append(publish_to(PROFILE_REPO, public_content, force=force, branch=branch_pub))
     if also_private:
         branch_priv = detect_default_branch(PROFILE_REPO_PRIVATE)
-        results.append(publish_to(PROFILE_REPO_PRIVATE, content, force=force, branch=branch_priv))
+        results.append(publish_to(PROFILE_REPO_PRIVATE, private_content, force=force, branch=branch_priv))
     return results
 
 
@@ -725,27 +831,34 @@ def main() -> int:
         if broken:
             print(f"[org-readme] {len(broken)} broken: {broken[:5]}{'...' if len(broken) > 5 else ''}", file=sys.stderr)
 
-    rendered = render(repos, verified, datetime.now(tz=timezone.utc))
+    now = datetime.now(tz=timezone.utc)
+    rendered_public = render(repos, verified, now, view="public")
+    rendered_private = render(repos, verified, now, view="private")
 
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(rendered)
-        print(f"[org-readme] wrote {args.output}", file=sys.stderr)
+        args.output.write_text(rendered_public)
+        priv_path = args.output.with_suffix(args.output.suffix + ".private")
+        priv_path.write_text(rendered_private)
+        print(f"[org-readme] wrote {args.output} + {priv_path}", file=sys.stderr)
 
-    cache_path = CACHE_DIR / "last-rendered.md"
-    cache_path.write_text(rendered)
+    (CACHE_DIR / "last-rendered.public.md").write_text(rendered_public)
+    (CACHE_DIR / "last-rendered.private.md").write_text(rendered_private)
 
     log = {
-        "timestamp": datetime.now(tz=timezone.utc).isoformat(),
+        "timestamp": now.isoformat(),
         "repos_seen": len(repos),
         "links_checked": len(verified),
         "broken_links": [u for u, s in verified.items() if s == 0 or s >= 400],
         "elapsed_sec": round(time.time() - t0, 2),
-        "sha256_of_rendered": hashlib.sha256(rendered.encode()).hexdigest()[:16],
+        "sha256_public": hashlib.sha256(rendered_public.encode()).hexdigest()[:16],
+        "sha256_private": hashlib.sha256(rendered_private.encode()).hexdigest()[:16],
+        "public_lines": rendered_public.count("\n"),
+        "private_lines": rendered_private.count("\n"),
     }
 
     if args.dry_run:
-        print(rendered)
+        print(rendered_private if args.only_private else rendered_public)
         log["action"] = "dry-run"
     else:
         if args.cleanup_desktop_ini:
@@ -757,10 +870,10 @@ def main() -> int:
                 print(f"[org-readme] workflow-install: {r['action']} {r['path']}", file=sys.stderr)
             log["workflow_install"] = install_results
         if args.only_private:
-            results = [publish_to(PROFILE_REPO_PRIVATE, rendered, force=args.force,
+            results = [publish_to(PROFILE_REPO_PRIVATE, rendered_private, force=args.force,
                                   branch=detect_default_branch(PROFILE_REPO_PRIVATE))]
         else:
-            results = publish(rendered, force=args.force, also_private=not args.no_private)
+            results = publish(rendered_public, rendered_private, force=args.force, also_private=not args.no_private)
         log["publishes"] = results
         for r in results:
             tag = f"{r['repo']}: {r['action']}"
