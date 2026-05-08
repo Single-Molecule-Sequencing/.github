@@ -553,7 +553,7 @@ The Single-Molecule-Sequencing org is the GitHub home of the **Athey Lab** at th
 <sub>This page is auto-generated daily by the
 [`/org-readme`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem/tree/main/skills/org-readme) skill
 running in <a href="https://github.com/Single-Molecule-Sequencing/.github/blob/master/.github/workflows/update-org-readme.yml"><code>update-org-readme.yml</code></a>.
-Last regenerated: <code>{ts.strftime("%Y-%m-%d %H:%M UTC")}</code>.{broken_note}</sub>
+Last regenerated: <code>{ts.strftime("%Y-%m-%d")}</code>.{broken_note}</sub>
 """
 
 
