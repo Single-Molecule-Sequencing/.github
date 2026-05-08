@@ -87,8 +87,8 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
 | 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) · [🔗 site](https://cautious-adventure-4q3g184.pages.github.io/) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
+| 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
 | 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) · [🔗 site](https://studious-adventure-j1zq1vo.pages.github.io/) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`lab-experiments`](https://github.com/Single-Molecule-Sequencing/lab-experiments) | Unified event-sourced experiment registry (ONT + PacBio + Illumina). v1 spec in docs/superpowers/specs/. | 🔒 private · `Python` |
 | 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
@@ -129,6 +129,7 @@ Project-coordination shells (`.project/` + `CLAUDE.md` pattern). Each wraps wet-
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`pharmvar-pangenome-pipeline`](https://github.com/Single-Molecule-Sequencing/pharmvar-pangenome-pipeline) | Pangenome-aware variant resolution against the PharmVar haplotype set. | 🔒 private · `Python` |
 | 🟢 [`programmable-nuclease-activity`](https://github.com/Single-Molecule-Sequencing/programmable-nuclease-activity) · [🔗 site](https://redesigned-adventure-r32rw74.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟢 [`fine-tuning`](https://github.com/Single-Molecule-Sequencing/fine-tuning) · [🔗 site](https://supreme-happiness-n3y8rjw.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟢 [`telomere-sequencing`](https://github.com/Single-Molecule-Sequencing/telomere-sequencing) · [🔗 site](https://vigilant-barnacle-1qgeo2r.pages.github.io/) | Long-Read Telomere Sequencing for TMM Profiling in Liposarcoma — RCC/CSI Grant #14884 | 🔒 private · `Python` |
@@ -141,7 +142,6 @@ Project-coordination shells (`.project/` + `CLAUDE.md` pattern). Each wraps wet-
 | 🟢 [`longevity-epigenetics`](https://github.com/Single-Molecule-Sequencing/longevity-epigenetics) | Working repo for the Kunkel/Athey/Kheterpal/Runge longevity-epigenetics proposal (Ellison/Oracle target). Original draft + per-axis brainstorm + revised aims sketch. | 🔒 private · `TeX` |
 | 🟢 [`lab-math`](https://github.com/Single-Molecule-Sequencing/lab-math) · [🔗 site](https://improved-parakeet-2qy2nq2.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟡 [`CYP2D7-Level2-Plasmid-Analysis`](https://github.com/Single-Molecule-Sequencing/CYP2D7-Level2-Plasmid-Analysis) | Per-barcode plasmid assembly + classification of CYP2D7 Level-2 Golden Gate constructs from ONT R10.4 rapid-barcoded sequencing run FBD64710 (April 2026). | 🔒 private · `HTML` |
-| 🟡 [`pharmvar-pangenome-pipeline`](https://github.com/Single-Molecule-Sequencing/pharmvar-pangenome-pipeline) | Pangenome-aware variant resolution against the PharmVar haplotype set. | 🔒 private · `Python` |
 | 🟡 [`pacbio-cas9-walkthrough`](https://github.com/Single-Molecule-Sequencing/pacbio-cas9-walkthrough) | Collaborator-facing walkthrough of the Athey Lab PacBio Cas9-targeted sequencing pipeline (HiFi BAM -> pbmm2 -> /cas9-enrichment -> /cas9-panel-eval v1.6+v1.7). | 🔒 private · `Python` |
 
 ### 🔧 Wet-lab and analysis tooling
@@ -260,5 +260,5 @@ The Single-Molecule-Sequencing org is the GitHub home of the **Athey Lab** at th
 [`/org-readme`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem/tree/main/skills/org-readme) skill
 running in <a href="https://github.com/Single-Molecule-Sequencing/.github/blob/master/.github/workflows/update-org-readme.yml"><code>update-org-readme.yml</code></a>.
 Last regenerated: <code>2026-05-08</code>.
-_Note: 1 link(s) flagged as unreachable in this run; they were dropped from Quick Links._
+_Note: 14 link(s) flagged as unreachable in this run; they were dropped from Quick Links._
 </sub>
