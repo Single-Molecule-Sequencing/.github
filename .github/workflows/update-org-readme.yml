@@ -40,11 +40,18 @@ jobs:
         run: gh --version
 
       - name: Render and publish org README
+        # Auth precedence:
+        #   1. LAB_ORG_README_PAT (org-wide PAT) — required for .github-private auto-update
+        #      and for the renderer to see all 85 repos (default GITHUB_TOKEN sees only 12 public).
+        #   2. GITHUB_TOKEN fallback — public README only. Private repo + private listing skipped.
+        # The script tolerates the missing private auth gracefully; the run still succeeds.
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.LAB_ORG_README_PAT || secrets.GITHUB_TOKEN }}
           FORCE_FLAG: ${{ inputs.force == true && '--force' || '' }}
+          # If LAB_ORG_README_PAT is missing, skip the private push to avoid the guaranteed 404.
+          NO_PRIVATE_FLAG: ${{ secrets.LAB_ORG_README_PAT && '' || '--no-private' }}
         run: |
-          python .github/scripts/render_org_readme.py $FORCE_FLAG
+          python .github/scripts/render_org_readme.py $FORCE_FLAG $NO_PRIVATE_FLAG
 
       - name: Upload run log as artifact
         if: always()
