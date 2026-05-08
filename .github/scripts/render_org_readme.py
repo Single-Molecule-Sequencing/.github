@@ -349,7 +349,13 @@ def fmt_repo_row(r: Repo) -> str:
     )
 
 
-def fmt_repo_table(repos: list[Repo], heading: str, blurb: str = "") -> str:
+def fmt_repo_table(repos: list[Repo], heading: str, blurb: str = "", *, sort: str = "pushed") -> str:
+    """Render a section table.
+
+    sort='pushed' — most-recent-first (active tables; freshness-emoji is the visual anchor)
+    sort='name'   — alphabetical (scratch + archived tables; their pushedAt churns from CI webhooks
+                                  and would create a publish feedback loop)
+    """
     if not repos:
         return ""
     lines = [f"### {heading}"]
@@ -359,7 +365,11 @@ def fmt_repo_table(repos: list[Repo], heading: str, blurb: str = "") -> str:
     lines.append("")
     lines.append("| Repo | Description | Meta |")
     lines.append("|---|---|---|")
-    for r in sorted(repos, key=lambda x: x.pushed_at, reverse=True):
+    if sort == "name":
+        ordered = sorted(repos, key=lambda x: x.name.lower())
+    else:
+        ordered = sorted(repos, key=lambda x: x.pushed_at, reverse=True)
+    for r in ordered:
         lines.append(fmt_repo_row(r))
     lines.append("")
     return "\n".join(lines)
@@ -623,12 +633,12 @@ def render(repos: list[Repo], verified: dict[str, int], render_ts: datetime, *, 
 
     if by_cat.get("archived"):
         parts.append("<details>\n<summary>📦 Archived repositories ({})</summary>\n\n".format(len(by_cat["archived"])))
-        parts.append(fmt_repo_table(by_cat["archived"], "Archived", "Preserved for git history; superseded by newer canonical repos."))
+        parts.append(fmt_repo_table(by_cat["archived"], "Archived", "Preserved for git history; superseded by newer canonical repos.", sort="name"))
         parts.append("</details>\n")
 
     if by_cat.get("scratch"):
         parts.append("<details>\n<summary>🧹 Scratch / vendored / smoke-test ({})</summary>\n\n".format(len(by_cat["scratch"])))
-        parts.append(fmt_repo_table(by_cat["scratch"], "Scratch", "Auto-spawned smoke-test repos, vendored third-party tools, demo content."))
+        parts.append(fmt_repo_table(by_cat["scratch"], "Scratch", "Auto-spawned smoke-test repos, vendored third-party tools, demo content.", sort="name"))
         parts.append("</details>\n")
 
     parts.append(fmt_footer(stats, render_ts, verified))
