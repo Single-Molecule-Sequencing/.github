@@ -5,8 +5,8 @@
 **Long-read genomics, pharmacogenomics, and methods development at the [Athey Lab](https://atheylab.org), University of Michigan**
 
 [![Athey Lab](https://img.shields.io/badge/Athey%20Lab-University%20of%20Michigan-00274C?style=flat-square)](https://atheylab.org)
-[![Repos](https://img.shields.io/badge/repos-87-blue?style=flat-square)](https://github.com/orgs/Single-Molecule-Sequencing/repositories)
-[![Public](https://img.shields.io/badge/public-13-success?style=flat-square)](https://github.com/orgs/Single-Molecule-Sequencing/repositories?q=visibility%3Apublic)
+[![Repos](https://img.shields.io/badge/repos-85-blue?style=flat-square)](https://github.com/orgs/Single-Molecule-Sequencing/repositories)
+[![Public](https://img.shields.io/badge/public-12-success?style=flat-square)](https://github.com/orgs/Single-Molecule-Sequencing/repositories?q=visibility%3Apublic)
 [![Updated](https://img.shields.io/badge/profile-auto--updated%20daily-brightgreen?style=flat-square)](https://github.com/Single-Molecule-Sequencing/.github/blob/master/.github/workflows/update-org-readme.yml)
 
 </div>
@@ -17,7 +17,7 @@
 
 We build **single-molecule, long-read sequencing methods** — Oxford Nanopore Technologies (ONT) and PacBio HiFi — to attack genomic problems that short-read sequencing cannot solve cleanly: structural variation in pharmacogenes (CYP2D6 / CYP2D7 / CYP2D8P), ssDNA size distribution at single-base resolution, repeat expansions, methylation aging clocks, and Cas9-targeted enrichment QC.
 
-Our codebase is organized as a **four-tier infrastructure stack** (data → registry → analysis → publication) that lets every published claim trace back to raw reads through a versioned, reproducible pipeline. The org hosts 87 repositories (13 public · 64 private · 10 archived) covering ~17 active manuscripts, ~14 project shells, and the analysis frameworks they share.
+Our codebase is organized as a **four-tier infrastructure stack** (data → registry → analysis → publication) that lets every published claim trace back to raw reads through a versioned, reproducible pipeline. The org hosts 85 repositories (12 public · 63 private · 10 archived) covering ~17 active manuscripts, ~14 project shells, and the analysis frameworks they share.
 
 
 ## 🚀 Quick links — dashboards & live sites
@@ -87,8 +87,8 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
+| 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
 | 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`SMS_infrastructure`](https://github.com/Single-Molecule-Sequencing/SMS_infrastructure) | Core infrastructure: schemas, validation, templates, and automation for SMS Lab | 🔒 private · `HTML` |
@@ -218,7 +218,7 @@ Preserved for git history; superseded by newer canonical repos.
 </details>
 
 <details>
-<summary>🧹 Scratch / vendored / smoke-test (6)</summary>
+<summary>🧹 Scratch / vendored / smoke-test (4)</summary>
 
 
 ### Scratch
@@ -227,8 +227,6 @@ Auto-spawned smoke-test repos, vendored third-party tools, demo content.
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`.github-private`](https://github.com/Single-Molecule-Sequencing/.github-private) | Private org profile assets. | 🔒 private |
-| 🟢 [`.github`](https://github.com/Single-Molecule-Sequencing/.github) | Org profile repository (this README). | 🌍 public |
 | 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
 | 🟡 [`_smoke-lab-paper-template-24978290870`](https://github.com/Single-Molecule-Sequencing/_smoke-lab-paper-template-24978290870) | Auto-spawned smoke-test repo (will be deleted by template-smoke workflow). | 🔒 private · `TeX` |
 | 🟡 [`_lab-render-canary`](https://github.com/Single-Molecule-Sequencing/_lab-render-canary) | CI canary repo for lab-papers reusable workflows. | 🔒 private · `TeX` |
@@ -251,8 +249,8 @@ The Single-Molecule-Sequencing org is the GitHub home of the **Athey Lab** at th
 
 ## 📊 Org stats
 
-- **Total repositories:** 87
-- **Public:** 13 · **Private:** 64 · **Internal:** 10 · **Archived:** 10
+- **Total repositories:** 85
+- **Public:** 12 · **Private:** 63 · **Internal:** 10 · **Archived:** 10
 - **Active manuscripts:** 17
 - **Active project workspaces:** 14
 
