@@ -734,13 +734,24 @@ def detect_default_branch(repo: str) -> str:
 
 
 def publish(public_content: str, private_content: str, *, force: bool = False, also_private: bool = True) -> list[dict]:
-    """Publish per-view content: public → .github, private → .github-private."""
+    """Publish per-view content: public → .github, private → .github-private.
+
+    The private push is best-effort. CI environments using a workflow's default
+    GITHUB_TOKEN cannot write to .github-private (private repo, scoped token).
+    We catch + log instead of failing the run. A PAT secret with org-wide write
+    is required to make the private auto-update work; until that's set, the
+    private view is refreshed only when /org-readme runs from a logged-in
+    developer's machine.
+    """
     results: list[dict] = []
     branch_pub = detect_default_branch(PROFILE_REPO)
     results.append(publish_to(PROFILE_REPO, public_content, force=force, branch=branch_pub))
     if also_private:
-        branch_priv = detect_default_branch(PROFILE_REPO_PRIVATE)
-        results.append(publish_to(PROFILE_REPO_PRIVATE, private_content, force=force, branch=branch_priv))
+        try:
+            branch_priv = detect_default_branch(PROFILE_REPO_PRIVATE)
+            results.append(publish_to(PROFILE_REPO_PRIVATE, private_content, force=force, branch=branch_priv))
+        except RuntimeError as e:
+            results.append({"action": "error", "repo": PROFILE_REPO_PRIVATE, "error": str(e)[:200]})
     return results
 
 
@@ -900,6 +911,8 @@ def main() -> int:
             tag = f"{r['repo']}: {r['action']}"
             if r["action"] == "publish":
                 tag += f" → {r.get('commit', '?')}"
+            elif r["action"] == "error":
+                tag += f" — {r.get('error', '?')}"
             print(f"[org-readme] {tag}", file=sys.stderr)
 
     (CACHE_DIR / "last-run.json").write_text(json.dumps(log, indent=2))
