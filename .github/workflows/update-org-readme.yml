@@ -1,15 +1,22 @@
 name: update-org-readme
 
-# Auto-regenerate the Single-Molecule-Sequencing org profile README.
+# Manual-trigger fallback for the org profile README generator.
 #
-# Workflow lives in `Single-Molecule-Sequencing/.github/.github/workflows/`.
-# The render script is vendored at `.github/scripts/render_org_readme.py`
-# (canonical copy lives in ont-ecosystem/skills/org-readme/scripts/).
+# The PRIMARY automation path is a local crontab entry on the lab admin's
+# WSL host (`~/repos/ont-ecosystem/skills/org-readme/` runs daily at
+# 12:00 UTC via `crontab -l`). That cron has full org-wide gh CLI auth
+# and refreshes both the public (.github) and member (.github-private)
+# views.
+#
+# This workflow exists only as:
+#   1. A manually-triggerable refresh button in the GitHub Actions UI.
+#   2. A future-ready hook in case org-wide PAT/App auth is added later
+#      (set secrets.LAB_ORG_README_PAT to enable; otherwise this no-ops
+#      gracefully without overwriting the comprehensive version).
+#
+# No `schedule:` block — daily refresh is owned by local cron.
 
 on:
-  schedule:
-    # Daily at 12:00 UTC (08:00 ET / 05:00 PT) — after morning lab activity has settled.
-    - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       force:
