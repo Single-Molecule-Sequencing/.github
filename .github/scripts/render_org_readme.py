@@ -27,6 +27,7 @@ from urllib import request as urllib_request
 
 ORG = "Single-Molecule-Sequencing"
 PROFILE_REPO = ".github"
+PROFILE_REPO_PRIVATE = ".github-private"
 PROFILE_PATH = "profile/README.md"
 CACHE_DIR = Path.home() / ".cache" / "org-readme"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -559,9 +560,9 @@ Last regenerated: <code>{ts.strftime("%Y-%m-%d")}</code>.{broken_note}</sub>
 # ---------------------------------------------------------------------------
 # Publish
 
-def publish(content: str, *, force: bool = False) -> dict:
-    """Push to .github/profile/README.md if content changed."""
-    path = f"repos/Single-Molecule-Sequencing/{PROFILE_REPO}/contents/{PROFILE_PATH}"
+def publish_to(repo: str, content: str, *, force: bool = False, branch: str = "master") -> dict:
+    """Push README content to <repo>/profile/README.md if content changed."""
+    path = f"repos/Single-Molecule-Sequencing/{repo}/contents/{PROFILE_PATH}"
     existing_sha: str | None = None
     existing_b64: str | None = None
     try:
@@ -572,24 +573,42 @@ def publish(content: str, *, force: bool = False) -> dict:
         pass
 
     new_b64 = base64.b64encode(content.encode("utf-8")).decode("ascii")
-    # GitHub stores content base64-encoded in 60-char-wrapped lines; decode-then-compare avoids whitespace flap.
     if existing_b64 and not force:
         try:
-            existing_decoded = base64.b64decode(existing_b64).decode("utf-8")
-            if existing_decoded == content:
-                return {"action": "skip", "reason": "content matches", "sha": existing_sha}
+            if base64.b64decode(existing_b64).decode("utf-8") == content:
+                return {"action": "skip", "repo": repo, "reason": "content matches", "sha": existing_sha}
         except Exception:
             pass
 
     payload: dict[str, Any] = {
         "message": f"chore(profile): auto-update org README ({datetime.now(tz=timezone.utc).strftime('%Y-%m-%d')})",
         "content": new_b64,
-        "branch": "master",
+        "branch": branch,
     }
     if existing_sha:
         payload["sha"] = existing_sha
     result = gh_api(path, method="PUT", payload=payload)
-    return {"action": "publish", "commit": result["commit"]["sha"][:7], "sha": result["content"]["sha"]}
+    return {"action": "publish", "repo": repo, "commit": result["commit"]["sha"][:7], "sha": result["content"]["sha"]}
+
+
+def detect_default_branch(repo: str) -> str:
+    """Probe the repo for its default branch (some repos use main, others master)."""
+    try:
+        meta = gh_api(f"repos/Single-Molecule-Sequencing/{repo}")
+        return meta.get("default_branch", "master")
+    except RuntimeError:
+        return "master"
+
+
+def publish(content: str, *, force: bool = False, also_private: bool = True) -> list[dict]:
+    """Publish to .github (always) and .github-private (if requested)."""
+    results: list[dict] = []
+    branch_pub = detect_default_branch(PROFILE_REPO)
+    results.append(publish_to(PROFILE_REPO, content, force=force, branch=branch_pub))
+    if also_private:
+        branch_priv = detect_default_branch(PROFILE_REPO_PRIVATE)
+        results.append(publish_to(PROFILE_REPO_PRIVATE, content, force=force, branch=branch_priv))
+    return results
 
 
 def cleanup_desktop_ini() -> None:
@@ -682,6 +701,8 @@ def main() -> int:
     p.add_argument("--output", type=Path, default=None, help="Also write rendered README to this path.")
     p.add_argument("--cleanup-desktop-ini", action="store_true", help="Remove the stray desktop.ini in the .github repo.")
     p.add_argument("--install-workflow", action="store_true", help="Vendor render_org_readme.py + update-org-readme.yml into the .github repo.")
+    p.add_argument("--no-private", action="store_true", help="Only publish to .github (skip the .github-private member view).")
+    p.add_argument("--only-private", action="store_true", help="Only publish to .github-private (skip the public .github view).")
     args = p.parse_args()
 
     t0 = time.time()
@@ -729,11 +750,17 @@ def main() -> int:
             for r in install_results:
                 print(f"[org-readme] workflow-install: {r['action']} {r['path']}", file=sys.stderr)
             log["workflow_install"] = install_results
-        result = publish(rendered, force=args.force)
-        log.update(result)
-        print(f"[org-readme] {result['action']}", file=sys.stderr)
-        if result["action"] == "publish":
-            print(f"[org-readme] committed {result.get('commit', '?')}", file=sys.stderr)
+        if args.only_private:
+            results = [publish_to(PROFILE_REPO_PRIVATE, rendered, force=args.force,
+                                  branch=detect_default_branch(PROFILE_REPO_PRIVATE))]
+        else:
+            results = publish(rendered, force=args.force, also_private=not args.no_private)
+        log["publishes"] = results
+        for r in results:
+            tag = f"{r['repo']}: {r['action']}"
+            if r["action"] == "publish":
+                tag += f" → {r.get('commit', '?')}"
+            print(f"[org-readme] {tag}", file=sys.stderr)
 
     (CACHE_DIR / "last-run.json").write_text(json.dumps(log, indent=2))
     return 0
