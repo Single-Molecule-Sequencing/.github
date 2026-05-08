@@ -87,9 +87,9 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
 | 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
-| 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`SMS_infrastructure`](https://github.com/Single-Molecule-Sequencing/SMS_infrastructure) | Core infrastructure: schemas, validation, templates, and automation for SMS Lab | 🔒 private · `HTML` |
 | 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
@@ -130,11 +130,11 @@ Project-coordination shells (`.project/` + `CLAUDE.md` pattern). Each wraps wet-
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`telomere-sequencing`](https://github.com/Single-Molecule-Sequencing/telomere-sequencing) | Long-Read Telomere Sequencing for TMM Profiling in Liposarcoma — RCC/CSI Grant #14884 | 🔒 private · `Python` |
 | 🟢 [`cas9-targeted-sequencing`](https://github.com/Single-Molecule-Sequencing/cas9-targeted-sequencing) | PacBio Cas9-enriched CYP2D6 targeted sequencing project; seeded from Yisang Kim thesis | 🔒 private · `Python` |
 | 🟢 [`longevity-platform-grant`](https://github.com/Single-Molecule-Sequencing/longevity-platform-grant) | Multi-PI longevity grant project: 4-axis long-read sequencing platform (methylation aging clock, somatic mosaicism, PGx of aging, mtDNA heteroplasmy). 14+ PDF variants for R01/R21/NIA/U19/Astera/Impetus/Hevolution/NSF/AFAR/Hillblom/CPRIT | 🌍 public · `Python` |
 | 🟢 [`golden-gate`](https://github.com/Single-Molecule-Sequencing/golden-gate) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟢 [`single-read-single-cell-diplotyping`](https://github.com/Single-Molecule-Sequencing/single-read-single-cell-diplotyping) | Single Read Single Cell Diplotyping project workspace | 🔒 private · `Python` |
-| 🟢 [`telomere-sequencing`](https://github.com/Single-Molecule-Sequencing/telomere-sequencing) | Long-Read Telomere Sequencing for TMM Profiling in Liposarcoma — RCC/CSI Grant #14884 | 🔒 private · `Python` |
 | 🟢 [`adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/adaptive-sampling) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟢 [`smaseq`](https://github.com/Single-Molecule-Sequencing/smaseq) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟢 [`longevity-epigenetics`](https://github.com/Single-Molecule-Sequencing/longevity-epigenetics) | Working repo for the Kunkel/Athey/Kheterpal/Runge longevity-epigenetics proposal (Ellison/Oracle target). Original draft + per-axis brainstorm + revised aims sketch. | 🔒 private · `TeX` |
@@ -227,8 +227,8 @@ Auto-spawned smoke-test repos, vendored third-party tools, demo content.
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`.github`](https://github.com/Single-Molecule-Sequencing/.github) | Org profile repository (this README). | 🌍 public |
 | 🟢 [`.github-private`](https://github.com/Single-Molecule-Sequencing/.github-private) | Private org profile assets. | 🔒 private |
+| 🟢 [`.github`](https://github.com/Single-Molecule-Sequencing/.github) | Org profile repository (this README). | 🌍 public |
 | 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
 | 🟡 [`_smoke-lab-paper-template-24978290870`](https://github.com/Single-Molecule-Sequencing/_smoke-lab-paper-template-24978290870) | Auto-spawned smoke-test repo (will be deleted by template-smoke workflow). | 🔒 private · `TeX` |
 | 🟡 [`_lab-render-canary`](https://github.com/Single-Molecule-Sequencing/_lab-render-canary) | CI canary repo for lab-papers reusable workflows. | 🔒 private · `TeX` |
