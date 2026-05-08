@@ -87,17 +87,17 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
-| 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
+| 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
+| 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) · [🔗 site](https://cautious-adventure-4q3g184.pages.github.io/) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
+| 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) · [🔗 site](https://studious-adventure-j1zq1vo.pages.github.io/) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`lab-experiments`](https://github.com/Single-Molecule-Sequencing/lab-experiments) | Unified event-sourced experiment registry (ONT + PacBio + Illumina). v1 spec in docs/superpowers/specs/. | 🔒 private · `Python` |
 | 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
-| 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
-| 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
+| 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) · [🔗 site](https://curly-chainsaw-7pee8lw.pages.github.io/) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`SMS_infrastructure`](https://github.com/Single-Molecule-Sequencing/SMS_infrastructure) | Core infrastructure: schemas, validation, templates, and automation for SMS Lab | 🔒 private · `HTML` |
 | 🟢 [`dev-env-setup`](https://github.com/Single-Molecule-Sequencing/dev-env-setup) | Automated installation of bioinformatics and AI development tools | 🔒 private · `Shell` |
 | 🟢 [`lab-context`](https://github.com/Single-Molecule-Sequencing/lab-context) | Earlier ambient-context experiment, partially superseded by lab-system. Pending reconciliation. | 🔒 private · `Python` |
 | 🟢 [`lab-agent`](https://github.com/Single-Molecule-Sequencing/lab-agent) | Private Chief-of-Staff Agent for gregfar@umich.edu. Reads lab-papers (public) as source; acts on email/calendar/drive/wiki signals; drafts rec letters, paper edits, meeting follow-ups. Every output is a draft — zero auto-send. | 🔒 private · `Python` |
-| 🟢 [`seq-registry`](https://github.com/Single-Molecule-Sequencing/seq-registry) | Lab sequence registry: store, query, and analyse DNA/RNA oligos and duplexes | 🔒 private · `Python` |
+| 🟢 [`seq-registry`](https://github.com/Single-Molecule-Sequencing/seq-registry) · [🔗 site](https://laughing-carnival-8e64gpy.pages.github.io/) | Lab sequence registry: store, query, and analyse DNA/RNA oligos and duplexes | 🔒 private · `Python` |
 | 🟡 [`ont-registry`](https://github.com/Single-Molecule-Sequencing/ont-registry) | Centralized registry for Oxford Nanopore sequencing experiments | 🔒 private · `Python` |
 
 ### 📝 Manuscripts in progress
@@ -106,22 +106,22 @@ One repo per paper. Each follows the lab atom-system convention (variants/, atom
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`paper-pgx-adaptive-sampling-v2`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling-v2) | CYP2D6 diplotype resolution via ONT adaptive sampling (regen from template — content TK) | 🔒 private · `Python` |
-| 🟢 [`end-reason-paper`](https://github.com/Single-Molecule-Sequencing/end-reason-paper) | Canonical paper repo: End-reason QC for Oxford Nanopore adaptive sampling (Scientific Data target). Replaces archived End_Reason_Manuscript + endreason_manuscript + paper-end-reason. | 🔒 private · `Python` |
+| 🟢 [`golden-gate-methods`](https://github.com/Single-Molecule-Sequencing/golden-gate-methods) · [🔗 site](https://fuzzy-adventure-5vy8976.pages.github.io/) | Type-IIS Golden Gate cloning methods paper (companion to /golden-gate-assembly skill). | 🔒 private · `Python` |
+| 🟢 [`paper-pgx-adaptive-sampling-v2`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling-v2) · [🔗 site](https://psychic-fiesta-3qrq8y8.pages.github.io/) | CYP2D6 diplotype resolution via ONT adaptive sampling (regen from template — content TK) | 🔒 private · `Python` |
+| 🟢 [`end-reason-paper`](https://github.com/Single-Molecule-Sequencing/end-reason-paper) · [🔗 site](https://literate-adventure-1qgm9rr.pages.github.io/) | Canonical paper repo: End-reason QC for Oxford Nanopore adaptive sampling (Scientific Data target). Replaces archived End_Reason_Manuscript + endreason_manuscript + paper-end-reason. | 🔒 private · `Python` |
 | 🟢 [`paper-smaseq-basecaller-finetuning`](https://github.com/Single-Molecule-Sequencing/paper-smaseq-basecaller-finetuning) | Machine-learning methods manuscript for SMA-seq label-driven basecaller fine-tuning | 🔒 private · `TeX` |
-| 🟢 [`paper-proficiency-testing-plasmids`](https://github.com/Single-Molecule-Sequencing/paper-proficiency-testing-plasmids) | Plasmid-standard proficiency-testing paper (CYP2D6 standards for SMA-seq calibration). | 🔒 private · `TeX` |
-| 🟢 [`paper-plasmid-standards-proof`](https://github.com/Single-Molecule-Sequencing/paper-plasmid-standards-proof) | Empirical proof that plasmid standards anchor SMA-seq error-rate calibration. | 🔒 private · `TeX` |
-| 🟢 [`paper-cyp2d6-breast-cancer-targeted`](https://github.com/Single-Molecule-Sequencing/paper-cyp2d6-breast-cancer-targeted) | CYP2D6 targeted long-read sequencing in breast-cancer pharmacogenomics. | 🔒 private · `TeX` |
+| 🟢 [`paper-proficiency-testing-plasmids`](https://github.com/Single-Molecule-Sequencing/paper-proficiency-testing-plasmids) · [🔗 site](https://solid-couscous-j1ko84r.pages.github.io/) | Plasmid-standard proficiency-testing paper (CYP2D6 standards for SMA-seq calibration). | 🔒 private · `TeX` |
+| 🟢 [`paper-plasmid-standards-proof`](https://github.com/Single-Molecule-Sequencing/paper-plasmid-standards-proof) · [🔗 site](https://friendly-chainsaw-qjqo492.pages.github.io/) | Empirical proof that plasmid standards anchor SMA-seq error-rate calibration. | 🔒 private · `TeX` |
+| 🟢 [`paper-cyp2d6-breast-cancer-targeted`](https://github.com/Single-Molecule-Sequencing/paper-cyp2d6-breast-cancer-targeted) · [🔗 site](https://fuzzy-fishstick-k5ko6en.pages.github.io/) | CYP2D6 targeted long-read sequencing in breast-cancer pharmacogenomics. | 🔒 private · `TeX` |
 | 🟢 [`paper-clc-library-prep`](https://github.com/Single-Molecule-Sequencing/paper-clc-library-prep) | Paper repository for the CLC one-pot precision library preparation manuscript | 🔒 private · `TeX` |
-| 🟢 [`paper-bsl2-targeted-long-read`](https://github.com/Single-Molecule-Sequencing/paper-bsl2-targeted-long-read) | Long-read targeted sequencing protocol for BSL2-class clinical samples. | 🔒 private · `TeX` |
+| 🟢 [`paper-bsl2-targeted-long-read`](https://github.com/Single-Molecule-Sequencing/paper-bsl2-targeted-long-read) · [🔗 site](https://turbo-invention-p3jo1vq.pages.github.io/) | Long-read targeted sequencing protocol for BSL2-class clinical samples. | 🔒 private · `TeX` |
 | 🟢 [`cas9-clc-ce-methods`](https://github.com/Single-Molecule-Sequencing/cas9-clc-ce-methods) | Measurement-guided methods paper for optimizing Cas9 targeted long-read sequencing with CLC-CE, ligation assays, and empirical ONT/PacBio read models | 🔒 private · `TeX` |
-| 🟢 [`SMAseq_paper`](https://github.com/Single-Molecule-Sequencing/SMAseq_paper) | Manuscript workspace: Empirical error rate determination in single-molecule sequencing using sequence-defined DNA standards | 🔒 private · `Python` |
-| 🟢 [`Wolfe_Thesis_final`](https://github.com/Single-Molecule-Sequencing/Wolfe_Thesis_final) | Monica J. Wolfe PhD dissertation (final version) — single-molecule long-read sequencing for complex loci. | 🔒 private · `TeX` |
+| 🟢 [`SMAseq_paper`](https://github.com/Single-Molecule-Sequencing/SMAseq_paper) · [🔗 site](https://stunning-winner-7p73j12.pages.github.io/) | Manuscript workspace: Empirical error rate determination in single-molecule sequencing using sequence-defined DNA standards | 🔒 private · `Python` |
+| 🟢 [`Wolfe_Thesis_final`](https://github.com/Single-Molecule-Sequencing/Wolfe_Thesis_final) · [🔗 site](https://curly-potato-o384r14.pages.github.io/) | Monica J. Wolfe PhD dissertation (final version) — single-molecule long-read sequencing for complex loci. | 🔒 private · `TeX` |
 | 🟢 [`paper-ssdna-size-distribution`](https://github.com/Single-Molecule-Sequencing/paper-ssdna-size-distribution) | Single-Base-Pair Resolution ssDNA Size Distribution Analysis of Plasmid Standards and Cas9-Containing Cleavage Sites | 🔒 private · `TeX` |
 | 🟢 [`paper-ce-cas9-cleavage-methods`](https://github.com/Single-Molecule-Sequencing/paper-ce-cas9-cleavage-methods) | Capillary Electrophoresis Methods for Quantitative Characterization of Cas9 Cleavage Products | 🔒 private · `TeX` |
 | 🟢 [`paper-ont-invisible-ends`](https://github.com/Single-Molecule-Sequencing/paper-ont-invisible-ends) | Invisible Ends: ONT reads systematically miss the terminal 10-20 nt at both ends, demonstrated via paired phosphorylated/unphosphorylated CLC SMA-seq adapters | 🔒 private · `TeX` |
 | 🟢 [`paper-singapore-cohort`](https://github.com/Single-Molecule-Sequencing/paper-singapore-cohort) | Singapore breast cancer cohort pharmacogenomics study | 🔒 private · `HTML` |
-| 🟢 [`golden-gate-methods`](https://github.com/Single-Molecule-Sequencing/golden-gate-methods) | Type-IIS Golden Gate cloning methods paper (companion to /golden-gate-assembly skill). | 🔒 private · `Python` |
 
 ### 🧪 Active project workspaces
 
@@ -129,17 +129,17 @@ Project-coordination shells (`.project/` + `CLAUDE.md` pattern). Each wraps wet-
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`telomere-sequencing`](https://github.com/Single-Molecule-Sequencing/telomere-sequencing) | Long-Read Telomere Sequencing for TMM Profiling in Liposarcoma — RCC/CSI Grant #14884 | 🔒 private · `Python` |
-| 🟢 [`cas9-targeted-sequencing`](https://github.com/Single-Molecule-Sequencing/cas9-targeted-sequencing) | PacBio Cas9-enriched CYP2D6 targeted sequencing project; seeded from Yisang Kim thesis | 🔒 private · `Python` |
-| 🟢 [`longevity-platform-grant`](https://github.com/Single-Molecule-Sequencing/longevity-platform-grant) | Multi-PI longevity grant project: 4-axis long-read sequencing platform (methylation aging clock, somatic mosaicism, PGx of aging, mtDNA heteroplasmy). 14+ PDF variants for R01/R21/NIA/U19/Astera/Impetus/Hevolution/NSF/AFAR/Hillblom/CPRIT | 🌍 public · `Python` |
-| 🟢 [`golden-gate`](https://github.com/Single-Molecule-Sequencing/golden-gate) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
-| 🟢 [`single-read-single-cell-diplotyping`](https://github.com/Single-Molecule-Sequencing/single-read-single-cell-diplotyping) | Single Read Single Cell Diplotyping project workspace | 🔒 private · `Python` |
-| 🟢 [`adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/adaptive-sampling) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
-| 🟢 [`smaseq`](https://github.com/Single-Molecule-Sequencing/smaseq) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
-| 🟢 [`longevity-epigenetics`](https://github.com/Single-Molecule-Sequencing/longevity-epigenetics) | Working repo for the Kunkel/Athey/Kheterpal/Runge longevity-epigenetics proposal (Ellison/Oracle target). Original draft + per-axis brainstorm + revised aims sketch. | 🔒 private · `TeX` |
 | 🟢 [`programmable-nuclease-activity`](https://github.com/Single-Molecule-Sequencing/programmable-nuclease-activity) · [🔗 site](https://redesigned-adventure-r32rw74.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
-| 🟢 [`fine-tuning`](https://github.com/Single-Molecule-Sequencing/fine-tuning) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
-| 🟢 [`lab-math`](https://github.com/Single-Molecule-Sequencing/lab-math) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
+| 🟢 [`fine-tuning`](https://github.com/Single-Molecule-Sequencing/fine-tuning) · [🔗 site](https://supreme-happiness-n3y8rjw.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
+| 🟢 [`telomere-sequencing`](https://github.com/Single-Molecule-Sequencing/telomere-sequencing) · [🔗 site](https://vigilant-barnacle-1qgeo2r.pages.github.io/) | Long-Read Telomere Sequencing for TMM Profiling in Liposarcoma — RCC/CSI Grant #14884 | 🔒 private · `Python` |
+| 🟢 [`cas9-targeted-sequencing`](https://github.com/Single-Molecule-Sequencing/cas9-targeted-sequencing) · [🔗 site](https://potential-adventure-k5mqr31.pages.github.io/) | PacBio Cas9-enriched CYP2D6 targeted sequencing project; seeded from Yisang Kim thesis | 🔒 private · `Python` |
+| 🟢 [`longevity-platform-grant`](https://github.com/Single-Molecule-Sequencing/longevity-platform-grant) | Multi-PI longevity grant project: 4-axis long-read sequencing platform (methylation aging clock, somatic mosaicism, PGx of aging, mtDNA heteroplasmy). 14+ PDF variants for R01/R21/NIA/U19/Astera/Impetus/Hevolution/NSF/AFAR/Hillblom/CPRIT | 🌍 public · `Python` |
+| 🟢 [`golden-gate`](https://github.com/Single-Molecule-Sequencing/golden-gate) · [🔗 site](https://verbose-barnacle-qjwkrq8.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
+| 🟢 [`single-read-single-cell-diplotyping`](https://github.com/Single-Molecule-Sequencing/single-read-single-cell-diplotyping) | Single Read Single Cell Diplotyping project workspace | 🔒 private · `Python` |
+| 🟢 [`adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/adaptive-sampling) · [🔗 site](https://legendary-couscous-y78rw1q.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
+| 🟢 [`smaseq`](https://github.com/Single-Molecule-Sequencing/smaseq) · [🔗 site](https://vigilant-enigma-e4ev2o3.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
+| 🟢 [`longevity-epigenetics`](https://github.com/Single-Molecule-Sequencing/longevity-epigenetics) | Working repo for the Kunkel/Athey/Kheterpal/Runge longevity-epigenetics proposal (Ellison/Oracle target). Original draft + per-axis brainstorm + revised aims sketch. | 🔒 private · `TeX` |
+| 🟢 [`lab-math`](https://github.com/Single-Molecule-Sequencing/lab-math) · [🔗 site](https://improved-parakeet-2qy2nq2.pages.github.io/) | Lab project coordination shell — see .project/ + CLAUDE.md | 🔒 private · `Python` |
 | 🟡 [`CYP2D7-Level2-Plasmid-Analysis`](https://github.com/Single-Molecule-Sequencing/CYP2D7-Level2-Plasmid-Analysis) | Per-barcode plasmid assembly + classification of CYP2D7 Level-2 Golden Gate constructs from ONT R10.4 rapid-barcoded sequencing run FBD64710 (April 2026). | 🔒 private · `HTML` |
 | 🟡 [`pharmvar-pangenome-pipeline`](https://github.com/Single-Molecule-Sequencing/pharmvar-pangenome-pipeline) | Pangenome-aware variant resolution against the PharmVar haplotype set. | 🔒 private · `Python` |
 | 🟡 [`pacbio-cas9-walkthrough`](https://github.com/Single-Molecule-Sequencing/pacbio-cas9-walkthrough) | Collaborator-facing walkthrough of the Athey Lab PacBio Cas9-targeted sequencing pipeline (HiFi BAM -> pbmm2 -> /cas9-enrichment -> /cas9-panel-eval v1.6+v1.7). | 🔒 private · `Python` |
@@ -151,12 +151,12 @@ Specialized utilities — basecallers, demultiplexers, sample-sheet generators, 
 | Repo | Description | Meta |
 |---|---|---|
 | 🟢 [`dorado-run`](https://github.com/Single-Molecule-Sequencing/dorado-run) | ONT Dorado basecaller Orchestration Pipeline | 🌍 public · `Python` |
-| 🟢 [`fragment-viewer`](https://github.com/Single-Molecule-Sequencing/fragment-viewer) | Interactive CE viewer + Cas9 cut-product predictor for the Athey lab fluorescent-adapter fragment analysis assay | 🔒 private · `JavaScript` |
+| 🟢 [`fragment-viewer`](https://github.com/Single-Molecule-Sequencing/fragment-viewer) · [🔗 site](https://single-molecule-sequencing.github.io/fragment-viewer/) | Interactive CE viewer + Cas9 cut-product predictor for the Athey lab fluorescent-adapter fragment analysis assay | 🔒 private · `JavaScript` |
 | 🟢 [`Reference_Fasta_Generator`](https://github.com/Single-Molecule-Sequencing/Reference_Fasta_Generator) | Creates reference fasta files for sequencing | 🏛️ internal · `HTML` |
 | 🟢 [`ONT-SMA-seq`](https://github.com/Single-Molecule-Sequencing/ONT-SMA-seq) | The SMA-seq workflow for Oxford Nanopore Technology, in pure Python and SQLite database. | 🌍 public · `Python` |
 | 🟢 [`SMS`](https://github.com/Single-Molecule-Sequencing/SMS) | Lab notebooks: cross-cutting SMS exploration. | 🏛️ internal · `Jupyter Notebook` |
-| 🟢 [`EndReason`](https://github.com/Single-Molecule-Sequencing/EndReason) | Notebooks: end-reason analysis exploration. | 🏛️ internal · `Jupyter Notebook` |
-| 🟢 [`Error-Rate-SMS`](https://github.com/Single-Molecule-Sequencing/Error-Rate-SMS) | Notebooks: error-rate determination from sequence-defined standards. | 🔒 private · `Jupyter Notebook` |
+| 🟢 [`EndReason`](https://github.com/Single-Molecule-Sequencing/EndReason) · [🔗 site](https://vigilant-train-2nmojvv.pages.github.io/) | Notebooks: end-reason analysis exploration. | 🏛️ internal · `Jupyter Notebook` |
+| 🟢 [`Error-Rate-SMS`](https://github.com/Single-Molecule-Sequencing/Error-Rate-SMS) · [🔗 site](https://laughing-couscous-16ev675.pages.github.io/) | Notebooks: error-rate determination from sequence-defined standards. | 🔒 private · `Jupyter Notebook` |
 | 🟢 [`End_Reason_nf`](https://github.com/Single-Molecule-Sequencing/End_Reason_nf) | Nextflow pipeline implementing the end-reason QC workflow. | 🌍 public · `Nextflow` |
 | 🟢 [`smaseq-qc`](https://github.com/Single-Molecule-Sequencing/smaseq-qc) | SMA-seq QC Python package: alignment, visualization, Golden Gate pipeline, HPC runner | 🔒 private · `Python` |
 | 🟢 [`sss`](https://github.com/Single-Molecule-Sequencing/sss) · [🔗 site](https://single-molecule-sequencing.github.io/sss/) | Sequencing sample sheet generator for wet lab | 🌍 public · `HTML` |
@@ -182,7 +182,7 @@ Public-facing landing pages and documentation sites built with Jekyll, Quarto, o
 | 🟢 [`single-molecule-sequencing.github.io`](https://github.com/Single-Molecule-Sequencing/single-molecule-sequencing.github.io) · [🔗 site](https://single-molecule-sequencing.github.io/) | Org-level GitHub Pages site (Jekyll). | 🌍 public · `Python` |
 | 🟢 [`sms-textbook-web`](https://github.com/Single-Molecule-Sequencing/sms-textbook-web) · [🔗 site](https://single-molecule-sequencing.github.io/sms-textbook-web/) | Single-Molecule Sequencing for Pharmacogenomics — web edition (Quarto book, generated from SMS_Textbook_Outline_v17.tex) | 🔒 private · `Python` |
 | 🟢 [`AtheyLab-Website`](https://github.com/Single-Molecule-Sequencing/AtheyLab-Website) · [🔗 site](https://single-molecule-sequencing.github.io/AtheyLab-Website/) | Athey Lab website overhaul | 🏛️ internal · `HTML` |
-| 🟢 [`portal`](https://github.com/Single-Molecule-Sequencing/portal) | _(no description)_ | 🏛️ internal · `HTML` |
+| 🟢 [`portal`](https://github.com/Single-Molecule-Sequencing/portal) · [🔗 site](https://expert-adventure-7e7rvv7.pages.github.io/) | _(no description)_ | 🏛️ internal · `HTML` |
 
 ### 🧬 Repo templates
 
@@ -229,7 +229,7 @@ Auto-spawned smoke-test repos, vendored third-party tools, demo content.
 |---|---|---|
 | 🟡 [`_lab-render-canary`](https://github.com/Single-Molecule-Sequencing/_lab-render-canary) | CI canary repo for lab-papers reusable workflows. | 🔒 private · `TeX` |
 | 🟡 [`_smoke-lab-paper-template-24978290870`](https://github.com/Single-Molecule-Sequencing/_smoke-lab-paper-template-24978290870) | Auto-spawned smoke-test repo (will be deleted by template-smoke workflow). | 🔒 private · `TeX` |
-| 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
+| 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) · [🔗 site](https://laughing-adventure-jzzv3op.pages.github.io/) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
 | ⚪ [`spec-kit`](https://github.com/Single-Molecule-Sequencing/spec-kit) | 💫 Toolkit for Spec-Driven Development (vendored). | 🌍 public · `Python` |
 
 </details>
