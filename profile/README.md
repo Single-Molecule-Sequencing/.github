@@ -17,7 +17,7 @@
 
 We build **single-molecule, long-read sequencing methods** — Oxford Nanopore Technologies (ONT) and PacBio HiFi — to attack genomic problems that short-read sequencing cannot solve cleanly: structural variation in pharmacogenes (CYP2D6 / CYP2D7 / CYP2D8P), ssDNA size distribution at single-base resolution, repeat expansions, methylation aging clocks, and Cas9-targeted enrichment QC.
 
-Our codebase is organized as a **four-tier infrastructure stack** (data → registry → analysis → publication) that lets every published claim trace back to raw reads through a versioned, reproducible pipeline. The org hosts 85 repositories (12 public · 63 private · 10 archived) covering ~17 active manuscripts, ~14 project shells, and the analysis frameworks they share.
+Our codebase is organized as a **four-tier infrastructure stack** (data → registry → analysis → publication) that lets every published claim trace back to raw reads through a versioned, reproducible pipeline. The org hosts 85 repositories (12 public · 63 private · 11 archived) covering ~16 active manuscripts, ~14 project shells, and the analysis frameworks they share.
 
 
 ## 🚀 Quick links — dashboards & live sites
@@ -88,11 +88,11 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 | Repo | Description | Meta |
 |---|---|---|
 | 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
+| 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
 | 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
 | 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`SMS_infrastructure`](https://github.com/Single-Molecule-Sequencing/SMS_infrastructure) | Core infrastructure: schemas, validation, templates, and automation for SMS Lab | 🔒 private · `HTML` |
-| 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
 | 🟢 [`lab-experiments`](https://github.com/Single-Molecule-Sequencing/lab-experiments) | Unified event-sourced experiment registry (ONT + PacBio + Illumina). v1 spec in docs/superpowers/specs/. | 🔒 private · `Python` |
 | 🟢 [`dev-env-setup`](https://github.com/Single-Molecule-Sequencing/dev-env-setup) | Automated installation of bioinformatics and AI development tools | 🔒 private · `Shell` |
 | 🟢 [`lab-context`](https://github.com/Single-Molecule-Sequencing/lab-context) | Earlier ambient-context experiment, partially superseded by lab-system. Pending reconciliation. | 🔒 private · `Python` |
@@ -106,6 +106,7 @@ One repo per paper. Each follows the lab atom-system convention (variants/, atom
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`paper-pgx-adaptive-sampling-v2`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling-v2) | CYP2D6 diplotype resolution via ONT adaptive sampling (regen from template — content TK) | 🔒 private · `Python` |
 | 🟢 [`end-reason-paper`](https://github.com/Single-Molecule-Sequencing/end-reason-paper) | Canonical paper repo: End-reason QC for Oxford Nanopore adaptive sampling (Scientific Data target). Replaces archived End_Reason_Manuscript + endreason_manuscript + paper-end-reason. | 🔒 private · `Python` |
 | 🟢 [`paper-smaseq-basecaller-finetuning`](https://github.com/Single-Molecule-Sequencing/paper-smaseq-basecaller-finetuning) | Machine-learning methods manuscript for SMA-seq label-driven basecaller fine-tuning | 🔒 private · `TeX` |
 | 🟢 [`paper-proficiency-testing-plasmids`](https://github.com/Single-Molecule-Sequencing/paper-proficiency-testing-plasmids) | Plasmid-standard proficiency-testing paper (CYP2D6 standards for SMA-seq calibration). | 🔒 private · `TeX` |
@@ -115,9 +116,7 @@ One repo per paper. Each follows the lab atom-system convention (variants/, atom
 | 🟢 [`paper-bsl2-targeted-long-read`](https://github.com/Single-Molecule-Sequencing/paper-bsl2-targeted-long-read) | Long-read targeted sequencing protocol for BSL2-class clinical samples. | 🔒 private · `TeX` |
 | 🟢 [`cas9-clc-ce-methods`](https://github.com/Single-Molecule-Sequencing/cas9-clc-ce-methods) | Measurement-guided methods paper for optimizing Cas9 targeted long-read sequencing with CLC-CE, ligation assays, and empirical ONT/PacBio read models | 🔒 private · `TeX` |
 | 🟢 [`SMAseq_paper`](https://github.com/Single-Molecule-Sequencing/SMAseq_paper) | Manuscript workspace: Empirical error rate determination in single-molecule sequencing using sequence-defined DNA standards | 🔒 private · `Python` |
-| 🟢 [`paper-pgx-adaptive-sampling-v2`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling-v2) | CYP2D6 diplotype resolution via ONT adaptive sampling (regen from template — content TK) | 🔒 private · `TeX` |
 | 🟢 [`Wolfe_Thesis_final`](https://github.com/Single-Molecule-Sequencing/Wolfe_Thesis_final) | Monica J. Wolfe PhD dissertation (final version) — single-molecule long-read sequencing for complex loci. | 🔒 private · `TeX` |
-| 🟢 [`sg-ncc2003-manuscript`](https://github.com/Single-Molecule-Sequencing/sg-ncc2003-manuscript) | Long-read sequencing vs PharmacoFocus array CYP2D6 genotyping for tamoxifen pharmacogenomics in a Singapore breast cancer cohort | 🔒 private · `Python` |
 | 🟢 [`paper-ssdna-size-distribution`](https://github.com/Single-Molecule-Sequencing/paper-ssdna-size-distribution) | Single-Base-Pair Resolution ssDNA Size Distribution Analysis of Plasmid Standards and Cas9-Containing Cleavage Sites | 🔒 private · `TeX` |
 | 🟢 [`paper-ce-cas9-cleavage-methods`](https://github.com/Single-Molecule-Sequencing/paper-ce-cas9-cleavage-methods) | Capillary Electrophoresis Methods for Quantitative Characterization of Cas9 Cleavage Products | 🔒 private · `TeX` |
 | 🟢 [`paper-ont-invisible-ends`](https://github.com/Single-Molecule-Sequencing/paper-ont-invisible-ends) | Invisible Ends: ONT reads systematically miss the terminal 10-20 nt at both ends, demonstrated via paired phosphorylated/unphosphorylated CLC SMA-seq adapters | 🔒 private · `TeX` |
@@ -195,7 +194,7 @@ Spawn a new lab repo with `gh repo create <new> --template Single-Molecule-Seque
 | 🟡 [`lab-project-template`](https://github.com/Single-Molecule-Sequencing/lab-project-template) | Template for new lab project repos (docs site + figure gallery + opt-in Pages). Spawn via: gh repo create <new> --template Single-Molecule-Sequencing/lab-project-template | 🔒 private |
 
 <details>
-<summary>📦 Archived repositories (10)</summary>
+<summary>📦 Archived repositories (11)</summary>
 
 
 ### Archived
@@ -204,6 +203,7 @@ Preserved for git history; superseded by newer canonical repos.
 
 | Repo | Description | Meta |
 |---|---|---|
+| 🟢 [`sg-ncc2003-manuscript`](https://github.com/Single-Molecule-Sequencing/sg-ncc2003-manuscript) | Long-read sequencing vs PharmacoFocus array CYP2D6 genotyping for tamoxifen pharmacogenomics in a Singapore breast cancer cohort | 🔒 private · `Python` |
 | 🟡 [`paper-pgx-adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling) | ARCHIVED 2026-04-27 — superseded by paper-pgx-adaptive-sampling-v2 (spawned from lab-paper-template). This repo preserved for git history only; new work belongs in -v2. | 🔒 private · `Python` |
 | 🟡 [`End_Reason_Manuscript`](https://github.com/Single-Molecule-Sequencing/End_Reason_Manuscript) | [ARCHIVED 2026-04-26] Replaced by Single-Molecule-Sequencing/end-reason-paper. Earlier attempt at automated paper authoring; absorbed into canonical V3 manuscript build. | 🏛️ internal · `HTML` |
 | 🟡 [`SMS_Textbook`](https://github.com/Single-Molecule-Sequencing/SMS_Textbook) | _(no description)_ | 🏛️ internal · `TypeScript` |
@@ -250,8 +250,8 @@ The Single-Molecule-Sequencing org is the GitHub home of the **Athey Lab** at th
 ## 📊 Org stats
 
 - **Total repositories:** 85
-- **Public:** 12 · **Private:** 63 · **Internal:** 10 · **Archived:** 10
-- **Active manuscripts:** 17
+- **Public:** 12 · **Private:** 63 · **Internal:** 10 · **Archived:** 11
+- **Active manuscripts:** 16
 - **Active project workspaces:** 14
 
 ---
