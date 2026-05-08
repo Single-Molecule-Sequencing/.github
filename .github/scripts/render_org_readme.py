@@ -854,6 +854,18 @@ def main() -> int:
     repos = fetch_repos()
     print(f"[org-readme] {len(repos)} repos found", file=sys.stderr)
 
+    # Refuse to publish a stub. CI workflows running on the default GITHUB_TOKEN can only see
+    # ~12 public repos; we don't want them to overwrite the comprehensive README that
+    # logged-in renders produce. Abort below the threshold unless --force.
+    MIN_REPOS_FOR_PUBLISH = 50
+    if len(repos) < MIN_REPOS_FOR_PUBLISH and not (args.dry_run or args.force):
+        print(
+            f"[org-readme] only {len(repos)} repos visible — auth token lacks org-wide read; "
+            f"refusing to publish a stub. Set LAB_ORG_README_PAT or run --force.",
+            file=sys.stderr,
+        )
+        return 0
+
     verified: dict[str, int] = {}
     if not args.no_link_check:
         urls = collect_urls_to_check(repos)
