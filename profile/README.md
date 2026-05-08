@@ -203,17 +203,17 @@ Preserved for git history; superseded by newer canonical repos.
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`sg-ncc2003-manuscript`](https://github.com/Single-Molecule-Sequencing/sg-ncc2003-manuscript) | Long-read sequencing vs PharmacoFocus array CYP2D6 genotyping for tamoxifen pharmacogenomics in a Singapore breast cancer cohort | 🔒 private · `Python` |
-| 🟡 [`paper-pgx-adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling) | ARCHIVED 2026-04-27 — superseded by paper-pgx-adaptive-sampling-v2 (spawned from lab-paper-template). This repo preserved for git history only; new work belongs in -v2. | 🔒 private · `Python` |
-| 🟡 [`End_Reason_Manuscript`](https://github.com/Single-Molecule-Sequencing/End_Reason_Manuscript) | [ARCHIVED 2026-04-26] Replaced by Single-Molecule-Sequencing/end-reason-paper. Earlier attempt at automated paper authoring; absorbed into canonical V3 manuscript build. | 🏛️ internal · `HTML` |
-| 🟡 [`SMS_Textbook`](https://github.com/Single-Molecule-Sequencing/SMS_Textbook) | _(no description)_ | 🏛️ internal · `TypeScript` |
-| 🟠 [`Wolfe_Thesis`](https://github.com/Single-Molecule-Sequencing/Wolfe_Thesis) | "PhD-Dissertation-Single-Molecule-Long-read-Sequencing-Monica-Wolfe-UMich" | 🔒 private · `Jupyter Notebook` |
-| 🟠 [`monica_thesis`](https://github.com/Single-Molecule-Sequencing/monica_thesis) | Monica J. Wolfe PhD Dissertation: Single-Molecule Long-read Sequencing for Structurally Complex Genomic Loci (Athey Lab, UMich 2026) | 🔒 private · `TeX` |
 | 🟠 [`CypScope`](https://github.com/Single-Molecule-Sequencing/CypScope) | ONT sequencing read coverage report tool over CYP2D6, CYP2D7, and CYP2D8P regions | 🌍 public · `JavaScript` |
-| 🟠 [`Textbook`](https://github.com/Single-Molecule-Sequencing/Textbook) | Early SMS textbook prototype (archived). | 🔒 private |
+| 🟡 [`End_Reason_Manuscript`](https://github.com/Single-Molecule-Sequencing/End_Reason_Manuscript) | [ARCHIVED 2026-04-26] Replaced by Single-Molecule-Sequencing/end-reason-paper. Earlier attempt at automated paper authoring; absorbed into canonical V3 manuscript build. | 🏛️ internal · `HTML` |
 | 🟠 [`endreason_manuscript`](https://github.com/Single-Molecule-Sequencing/endreason_manuscript) | [ARCHIVED 2026-04-26] Replaced by Single-Molecule-Sequencing/end-reason-paper. Earlier attempt at automated paper authoring; absorbed into canonical V3 manuscript build. | 🔒 private · `TeX` |
+| 🟠 [`monica_thesis`](https://github.com/Single-Molecule-Sequencing/monica_thesis) | Monica J. Wolfe PhD Dissertation: Single-Molecule Long-read Sequencing for Structurally Complex Genomic Loci (Athey Lab, UMich 2026) | 🔒 private · `TeX` |
 | 🟠 [`paper-end-reason`](https://github.com/Single-Molecule-Sequencing/paper-end-reason) | [ARCHIVED 2026-04-26] Replaced by Single-Molecule-Sequencing/end-reason-paper. Earlier attempt at automated paper authoring; absorbed into canonical V3 manuscript build. | 🔒 private · `HTML` |
+| 🟡 [`paper-pgx-adaptive-sampling`](https://github.com/Single-Molecule-Sequencing/paper-pgx-adaptive-sampling) | ARCHIVED 2026-04-27 — superseded by paper-pgx-adaptive-sampling-v2 (spawned from lab-paper-template). This repo preserved for git history only; new work belongs in -v2. | 🔒 private · `Python` |
+| 🟢 [`sg-ncc2003-manuscript`](https://github.com/Single-Molecule-Sequencing/sg-ncc2003-manuscript) | Long-read sequencing vs PharmacoFocus array CYP2D6 genotyping for tamoxifen pharmacogenomics in a Singapore breast cancer cohort | 🔒 private · `Python` |
 | 🟠 [`sms-core-math`](https://github.com/Single-Molecule-Sequencing/sms-core-math) | Mathematical knowledge registry - formal definitions, theorems, and formulas | 🔒 private · `TeX` |
+| 🟡 [`SMS_Textbook`](https://github.com/Single-Molecule-Sequencing/SMS_Textbook) | _(no description)_ | 🏛️ internal · `TypeScript` |
+| 🟠 [`Textbook`](https://github.com/Single-Molecule-Sequencing/Textbook) | Early SMS textbook prototype (archived). | 🔒 private |
+| 🟠 [`Wolfe_Thesis`](https://github.com/Single-Molecule-Sequencing/Wolfe_Thesis) | "PhD-Dissertation-Single-Molecule-Long-read-Sequencing-Monica-Wolfe-UMich" | 🔒 private · `Jupyter Notebook` |
 
 </details>
 
@@ -227,9 +227,9 @@ Auto-spawned smoke-test repos, vendored third-party tools, demo content.
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
-| 🟡 [`_smoke-lab-paper-template-24978290870`](https://github.com/Single-Molecule-Sequencing/_smoke-lab-paper-template-24978290870) | Auto-spawned smoke-test repo (will be deleted by template-smoke workflow). | 🔒 private · `TeX` |
 | 🟡 [`_lab-render-canary`](https://github.com/Single-Molecule-Sequencing/_lab-render-canary) | CI canary repo for lab-papers reusable workflows. | 🔒 private · `TeX` |
+| 🟡 [`_smoke-lab-paper-template-24978290870`](https://github.com/Single-Molecule-Sequencing/_smoke-lab-paper-template-24978290870) | Auto-spawned smoke-test repo (will be deleted by template-smoke workflow). | 🔒 private · `TeX` |
+| 🟢 [`demo-repository`](https://github.com/Single-Molecule-Sequencing/demo-repository) | GitHub-provided demo repo template. | 🔒 private · `HTML` |
 | ⚪ [`spec-kit`](https://github.com/Single-Molecule-Sequencing/spec-kit) | 💫 Toolkit for Spec-Driven Development (vendored). | 🌍 public · `Python` |
 
 </details>
