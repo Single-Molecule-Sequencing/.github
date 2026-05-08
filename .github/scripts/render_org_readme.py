@@ -375,16 +375,27 @@ def fmt_repo_table(repos: list[Repo], heading: str, blurb: str = "", *, sort: st
     return "\n".join(lines)
 
 
+def _link_definitely_broken(status: int) -> bool:
+    """Treat only 4xx as 'definitely broken'.
+
+    Network errors (status==0) and 5xx are transient — common for GitHub Pages cold starts and
+    IPv6/DNS flap. Keeping them rendered avoids a feedback loop where Quick Links membership
+    flips on every cron tick and triggers a fresh publish.
+    """
+    return 400 <= status < 500
+
+
 def fmt_dashboards(verified: dict[str, int]) -> str:
     lines = ["## 🚀 Quick links — dashboards & live sites", ""]
     for d in FEATURED_DASHBOARDS:
         url = d["url"]
         status = verified.get(url, 0)
-        if status >= 400 or status == 0:
-            url = d.get("fallback", url)
-            status = verified.get(url, 0)
-        if status >= 400 or status == 0:
-            continue  # silently drop fully broken entries
+        if _link_definitely_broken(status):
+            fallback = d.get("fallback")
+            if fallback and not _link_definitely_broken(verified.get(fallback, 0)):
+                url = fallback
+            else:
+                continue  # genuinely broken — drop
         lines.append(f"- **[{d['name']}]({url})** — {d['blurb']}")
     lines.append("")
     return "\n".join(lines)
