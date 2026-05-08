@@ -87,8 +87,8 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
 | 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
+| 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
 | 🟢 [`lab-wiki`](https://github.com/Single-Molecule-Sequencing/lab-wiki) | Athey Lab living knowledge base — LLM-maintained wiki | 🔒 private · `Python` |
 | 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`SMS_infrastructure`](https://github.com/Single-Molecule-Sequencing/SMS_infrastructure) | Core infrastructure: schemas, validation, templates, and automation for SMS Lab | 🔒 private · `HTML` |
@@ -261,6 +261,6 @@ The Single-Molecule-Sequencing org is the GitHub home of the **Athey Lab** at th
 <sub>This page is auto-generated daily by the
 [`/org-readme`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem/tree/main/skills/org-readme) skill
 running in <a href="https://github.com/Single-Molecule-Sequencing/.github/blob/master/.github/workflows/update-org-readme.yml"><code>update-org-readme.yml</code></a>.
-Last regenerated: <code>2026-05-08 19:49 UTC</code>.
+Last regenerated: <code>2026-05-08</code>.
 _Note: 1 link(s) flagged as unreachable in this run; they were dropped from Quick Links._
 </sub>
