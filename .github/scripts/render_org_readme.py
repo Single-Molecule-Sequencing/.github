@@ -168,10 +168,14 @@ CATEGORY_OVERRIDES: dict[str, str] = {
     "SMS": "tooling",
     "Error-Rate-SMS": "tooling",
     "SMA_seq_test": "tooling",
-    ".github": "scratch",
-    ".github-private": "scratch",
     "demo-repository": "scratch",
 }
+
+# Repos to drop entirely from the README listing.
+# - .github and .github-private are this skill's own publish targets; including
+#   them creates a feedback loop (each publish bumps their pushedAt, which
+#   reshuffles the table on the next render).
+SKIP_REPOS: set[str] = {".github", ".github-private"}
 
 
 @dataclass
@@ -286,6 +290,8 @@ def fetch_repos() -> list[Repo]:
     raw = json.loads(proc.stdout)
     repos: list[Repo] = []
     for r in raw:
+        if r["name"] in SKIP_REPOS:
+            continue
         repos.append(Repo(
             name=r["name"],
             description=r.get("description") or "",
