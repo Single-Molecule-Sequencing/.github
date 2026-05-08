@@ -22,7 +22,7 @@ Our codebase is organized as a **four-tier infrastructure stack** (data → regi
 
 ## 🚀 Quick links — dashboards & live sites
 
-- **[🌐 Athey Lab Website](https://single-molecule-sequencing.github.io/AtheyLab-Website/)** — Public-facing lab homepage: people, publications, news.
+- **[🌐 Athey Lab Website](https://atheylab.org)** — Public-facing lab homepage: people, publications, news.
 - **[📚 SMS Textbook (Web Edition)](https://single-molecule-sequencing.github.io/sms-textbook-web/)** — 8-volume Quarto book on Single-Molecule Sequencing for Pharmacogenomics — 349 chapters, fully searchable.
 - **[🧬 ont-ecosystem Docs](https://single-molecule-sequencing.github.io/ont-ecosystem/)** — Skill catalog and CLI reference for the lab's primary analysis framework (153 lib modules, 80+ skills).
 - **[🧪 Sample-Sheet Generator](https://single-molecule-sequencing.github.io/sss/)** — Browser-based wet-lab sample-sheet builder for ONT runs.
@@ -87,8 +87,8 @@ The substrate everything else depends on — registries, analysis frameworks, pa
 
 | Repo | Description | Meta |
 |---|---|---|
-| 🟢 [`lab-experiments`](https://github.com/Single-Molecule-Sequencing/lab-experiments) | Unified event-sourced experiment registry (ONT + PacBio + Illumina). v1 spec in docs/superpowers/specs/. | 🔒 private · `Python` |
 | 🟢 [`lab-papers`](https://github.com/Single-Molecule-Sequencing/lab-papers) | Lab-wide infrastructure for manuscripts: validated reference library, shared LaTeX macros, matplotlib conventions, reusable CI, submission checklists, and Claude skills. | 🔒 private · `Python` |
+| 🟢 [`lab-experiments`](https://github.com/Single-Molecule-Sequencing/lab-experiments) | Unified event-sourced experiment registry (ONT + PacBio + Illumina). v1 spec in docs/superpowers/specs/. | 🔒 private · `Python` |
 | 🟢 [`lab-onboarding`](https://github.com/Single-Molecule-Sequencing/lab-onboarding) | End-to-end onboarding for new Athey Lab members with GitHub Copilot — clones the 4-layer lab infrastructure (ont-ecosystem, lab-system, lab-papers, lab-wiki), installs Copilot CLI, wires MCP, validates. | 🔒 private · `Shell` |
 | 🟢 [`lab-system`](https://github.com/Single-Molecule-Sequencing/lab-system) | Ambient lab-context runtime: locations manifest + MCP server + workspace launcher | 🔒 private · `Python` |
 | 🟢 [`ont-ecosystem`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem) · [🔗 site](https://single-molecule-sequencing.github.io/ont-ecosystem/) | Oxford Nanopore experiment management with provenance tracking | 🔒 private · `Python` |
