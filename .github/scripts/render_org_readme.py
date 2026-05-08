@@ -157,7 +157,6 @@ DESCRIPTION_OVERRIDES: dict[str, str] = {
     "lab-context": "Earlier ambient-context experiment, partially superseded by lab-system. Pending reconciliation.",
     "SMA_seq_test": "Lightweight SMA-seq integration tests.",
     "pharmvar-pangenome-pipeline": "Pangenome-aware variant resolution against the PharmVar haplotype set.",
-    "spec-kit": "💫 Vendored Spec-Driven-Development toolkit (third-party).",
 }
 
 # Force-classify these into specific categories regardless of name patterns.
