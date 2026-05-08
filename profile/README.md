@@ -22,6 +22,7 @@ Our codebase is organized as a **four-tier infrastructure stack** (data → regi
 
 ## 🚀 Quick links — dashboards & live sites
 
+- **[🌐 Athey Lab Website](https://single-molecule-sequencing.github.io/AtheyLab-Website/)** — Public-facing lab homepage: people, publications, news.
 - **[📚 SMS Textbook (Web Edition)](https://single-molecule-sequencing.github.io/sms-textbook-web/)** — 8-volume Quarto book on Single-Molecule Sequencing for Pharmacogenomics — 349 chapters, fully searchable.
 - **[🧬 ont-ecosystem Docs](https://single-molecule-sequencing.github.io/ont-ecosystem/)** — Skill catalog and CLI reference for the lab's primary analysis framework (153 lib modules, 80+ skills).
 - **[🧪 Sample-Sheet Generator](https://single-molecule-sequencing.github.io/sss/)** — Browser-based wet-lab sample-sheet builder for ONT runs.
@@ -259,5 +260,5 @@ The Single-Molecule-Sequencing org is the GitHub home of the **Athey Lab** at th
 [`/org-readme`](https://github.com/Single-Molecule-Sequencing/ont-ecosystem/tree/main/skills/org-readme) skill
 running in <a href="https://github.com/Single-Molecule-Sequencing/.github/blob/master/.github/workflows/update-org-readme.yml"><code>update-org-readme.yml</code></a>.
 Last regenerated: <code>2026-05-08</code>.
-_Note: 2 link(s) flagged as unreachable in this run; they were dropped from Quick Links._
+_Note: 1 link(s) flagged as unreachable in this run; they were dropped from Quick Links._
 </sub>
